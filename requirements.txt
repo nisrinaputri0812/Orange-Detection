@@ -1,4 +1,5 @@
 streamlit
-ultalytics
+ultralytics
 opencv-python
 Pillow
+numpy
