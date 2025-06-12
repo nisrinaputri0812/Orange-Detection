@@ -22,7 +22,7 @@ if mode == "Gambar":
     uploaded_file = st.file_uploader("Upload gambar", type=["jpg", "jpeg", "png"])
     if uploaded_file:
         image = Image.open(uploaded_file)
-        st.image(image, caption="Gambar yang diunggah", use_column_width=True)
+        st.image(image, caption="Gambar yang diunggah", use_container_width=True)
 
         # Konversi ke array dan deteksi
         img_np = np.array(image)
@@ -33,7 +33,7 @@ if mode == "Gambar":
         
         annotated_image  = results[0].plot()
         annotated_image = cv2.cvtColor(annotated_image, cv2.COLOR_BGR2RGB) 
-        st.image(annotated_image, caption="Hasil Deteksi", use_column_width=True)
+        st.image(annotated_image, caption="Hasil Deteksi", use_container_width=True)
 
 # Mode Video
 elif mode == "Video":
@@ -54,7 +54,7 @@ elif mode == "Video":
             
             annotated_frame = results[0].plot()
             annotated_frame = cv2.cvtColor(annotated_frame, cv2.COLOR_BGR2RGB) 
-            stframe.image(annotated_frame, channels="BGR", use_column_width=True)
+            stframe.image(annotated_frame, channels="BGR", use_container_width=True)
 
         cap.release()
     cv2.destroyAllWindows()
