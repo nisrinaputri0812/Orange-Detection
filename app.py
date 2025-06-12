@@ -13,7 +13,7 @@ print(model.names)
 
 # Sidebar: Pilih Mode
 st.sidebar.title("Mode Deteksi")
-mode = st.sidebar.selectbox("Pilih mode:", ["Gambar", "Video", "Webcam"])
+mode = st.sidebar.selectbox("Pilih mode:", ["Gambar", "Video"])
 
 st.title("Deteksi Kematangan Buah Jeruk - YOLOv8")
 
