@@ -30,7 +30,7 @@ if mode == "Gambar":
 
         # Tampilkan gambar hasil deteksi 
         results = model(image, conf=0.25)
-        st.write(results[0].boxes)
+        
         annotated_image  = results[0].plot()
         annotated_image = cv2.cvtColor(annotated_image, cv2.COLOR_BGR2RGB) 
         st.image(annotated_image, caption="Hasil Deteksi", use_column_width=True)
@@ -51,33 +51,10 @@ elif mode == "Video":
                 break
 
             results = model(frame, conf=0.25)
-            st.write(results[0].boxes)
+            
             annotated_frame = results[0].plot()
             annotated_frame = cv2.cvtColor(annotated_frame, cv2.COLOR_BGR2RGB) 
             stframe.image(annotated_frame, channels="BGR", use_column_width=True)
 
         cap.release()
-
-# Mode Webcam (lokal saja)
-elif mode == "Webcam":
-    st.warning("Webcam hanya bisa digunakan saat dijalankan secara lokal.")
-    st.write("Menyalakan webcam... Tekan 'q' di jendela untuk berhenti.")
-    
-    cap = cv2.VideoCapture(0)  # 0 = default webcam
-
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            st.write("Gagal membaca frame dari webcam.")
-            break
-
-        results = model(frame, conf=0.25)
-        st.write(results[0].boxes)
-        annotated_frame = results[0].plot()
-
-        cv2.imshow("Deteksi Webcam - Tekan q untuk keluar", annotated_frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-
-    cap.release()
     cv2.destroyAllWindows()
