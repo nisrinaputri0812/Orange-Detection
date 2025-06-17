@@ -4,7 +4,7 @@ import os
 
 # Cek login
 if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
+    st.session_state["logged_in"] = False
 
 # Fungsi load dan save user
 def load_users():
@@ -18,7 +18,7 @@ def save_users(users):
         json.dump(users, f, indent=4)
 
 # Jika belum login
-if not st.session_state.logged_in:
+if not st.session_state["logged_in"]:
     st.title("🔐 Login / Register")
 
     menu = st.radio("Pilih Menu", ["Login", "Register"])
@@ -34,7 +34,7 @@ if not st.session_state.logged_in:
 
         if menu == "Login":
             if email in users and users[email]["password"] == password:
-                st.session_state.logged_in = True
+                st.session_state["logged_in"] = True
                 st.session_state.user = users[email]["name"]
                 st.success("Login berhasil!")
                 st.experimental_rerun()
