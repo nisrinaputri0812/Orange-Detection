@@ -37,7 +37,7 @@ if not st.session_state["logged_in"]:
                 st.session_state["logged_in"] = True
                 st.session_state.user = users[email]["name"]
                 st.success("Login berhasil!")
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Email atau password salah.")
         elif menu == "Register":
