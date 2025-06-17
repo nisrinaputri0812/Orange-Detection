@@ -63,4 +63,4 @@ else:
         about.run()
     elif pilihan == "Logout":
         st.session_state.logged_in = False
-        st.experimental_rerun()
+        st.rerun()
