@@ -1,6 +1,6 @@
 import streamlit as st
 
-logo_url = "https://raw.githubusercontent.com/nisrinaputri0812/Orange-Detection/main/Logo.png"
+logo_url = "https://raw.githubusercontent.com/nisrinaputri0812/Orange-Detection/main/LogoBaru.jpg"
 
 st.image(logo_url, width=200)
     
