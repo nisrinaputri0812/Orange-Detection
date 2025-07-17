@@ -1,10 +1,9 @@
 import streamlit as st
 
 logo_url = "https://raw.githubusercontent.com/nisrinaputri0812/Orange-Detection/main/LogoBaru.jpg"
-
-st.image(logo_url, width=200)
     
 def run():
+    st.image(logo_url, width=200)
     st.subheader("ℹ️ Tentang Aplikasi")
     st.write("Aplikasi ini dikembangkan untuk mendeteksi jeruk secara otomatis pada gambar atau video. Dengan memanfaatkan teknologi kecerdasan buatan dan computer vision, proses identifikasi jeruk menjadi lebih cepat, akurat, dan efisien.")
 
