@@ -4,7 +4,7 @@ from PIL import Image
 logo = Image.open ("LogoBaru.jpg"}
     
 def run():
-    st.image(logo_url, width=200)
+    st.image(logo, width=200)
     st.subheader("ℹ️ Tentang Aplikasi")
     st.write("Aplikasi ini dikembangkan untuk mendeteksi jeruk secara otomatis pada gambar atau video. Dengan memanfaatkan teknologi kecerdasan buatan dan computer vision, proses identifikasi jeruk menjadi lebih cepat, akurat, dan efisien.")
 
