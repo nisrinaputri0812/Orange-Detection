@@ -1,8 +1,21 @@
 import streamlit as st
-from PIL import Image
+from pathlib import Path
 
-st.image("https://raw.githubusercontent.com/nisrinaputri0812/Orange-Detection/main/LogoBaru.jpg", width=200)
+# Cari logo dengan nama yang ada di repo
+def find_logo():
+    candidates = ["Logo.png", "Logo.jpg"]
+    for name in candidates:
+        if Path(name).is_file():
+            return name
+    return None
 
+logo_file = find_logo()
+
+if logo_file:
+    st.image(logo_file, width=200)
+else:
+    st.error("Logo tidak ditemukan di folder utama!")
+    
 def run():
     st.subheader("ℹ️ Tentang Aplikasi")
     st.write("Aplikasi ini dikembangkan untuk mendeteksi jeruk secara otomatis pada gambar atau video. Dengan memanfaatkan teknologi kecerdasan buatan dan computer vision, proses identifikasi jeruk menjadi lebih cepat, akurat, dan efisien.")
