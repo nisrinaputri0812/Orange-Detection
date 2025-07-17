@@ -1,20 +1,14 @@
 import streamlit as st
 from pathlib import Path
 
-# Cari logo dengan nama yang ada di repo
-def find_logo():
-    candidates = ["Logo.png", "Logo.jpg"]
-    for name in candidates:
-        if Path(name).is_file():
-            return name
-    return None
+# Nama file logo yang pasti digunakan
+logo_file = "Logo.png"
 
-logo_file = find_logo()
-
-if logo_file:
+# Cek apakah file ada
+if Path(logo_file).is_file():
     st.image(logo_file, width=200)
 else:
-    st.error("Logo tidak ditemukan di folder utama!")
+    st.error(f"Logo '{logo_file}' tidak ditemukan di folder utama!")
     
 def run():
     st.subheader("ℹ️ Tentang Aplikasi")
