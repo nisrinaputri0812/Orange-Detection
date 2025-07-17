@@ -1,4 +1,7 @@
 import streamlit as st
+from PIL import Image
+
+st.image("Logo.jpg", width=200)
 
 def run():
     st.subheader("ℹ️ Tentang Aplikasi")
