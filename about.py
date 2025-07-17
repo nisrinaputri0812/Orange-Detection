@@ -1,14 +1,8 @@
 import streamlit as st
-from pathlib import Path
 
-# Nama file logo yang pasti digunakan
-logo_file = "LogoBaru.jpg"
+logo_url = "https://raw.githubusercontent.com/nisrinaputri0812/Orange-Detection/main/Logo.png"
 
-# Cek apakah file ada
-if Path(logo_file).is_file():
-    st.image(logo_file, width=200)
-else:
-    st.error(f"Logo '{logo_file}' tidak ditemukan di folder utama!")
+st.image(logo_url, width=200)
     
 def run():
     st.subheader("ℹ️ Tentang Aplikasi")
