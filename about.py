@@ -1,6 +1,7 @@
 import streamlit as st
+from PIL import Image
 
-logo_url = "https://raw.githubusercontent.com/nisrinaputri0812/Orange-Detection/main/LogoBaru.jpg"
+logo = Image.open ("LogoBaru.jpg"}
     
 def run():
     st.image(logo_url, width=200)
