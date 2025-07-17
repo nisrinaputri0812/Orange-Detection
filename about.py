@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 
-st.image("LogoBaru.jpg", width=200)
+st.image("https://raw.githubusercontent.com/nisrinaputri0812/Orange-Detection/main/LogoBaru.jpg", width=200)
 
 def run():
     st.subheader("ℹ️ Tentang Aplikasi")
