@@ -2,7 +2,7 @@ import streamlit as st
 from pathlib import Path
 
 # Nama file logo yang pasti digunakan
-logo_file = "Logo.png"
+logo_file = "Logo.jpg"
 
 # Cek apakah file ada
 if Path(logo_file).is_file():
